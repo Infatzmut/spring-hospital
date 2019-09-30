@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+		<h1>Lista de medico</h1>
+
+		<div class="card text-center">
+			<div class="card-header">Lista de medicos</div>
+			<div class="card-body">
+
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Especialidad</th>
+							<th scope="col">Dirección</th>
+							<th scope="col">telefono</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody th:each="medico: ${medicos}">
+						<tr>
+							<th scope="row" th:text="${medico.id}">1</th>
+							<td th:text="${medico.nombre}">Mark</td>
+							<td th:text="${medico.especialidad.nombre}">Otto</td>
+							<td th:text="${medico.direccion}">@mdo</td>
+							<td th:text="${medico.telefono}">@mdo</td>
+							<td>@mdo</td>
+						</tr>						
+					</tbody>
+				</table>
+
+			</div>
+			<div class="card-footer text-muted">botones</div>
+		</div>
+
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
