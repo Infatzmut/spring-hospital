@@ -18,7 +18,7 @@
 							<th scope="col">#</th>
 							<th scope="col">Nombre</th>
 							<th scope="col">Especialidad</th>
-							<th scope="col">Dirección</th>
+							<th scope="col">Direcciï¿½n</th>
 							<th scope="col">telefono</th>
 							<th scope="col"></th>
 						</tr>
@@ -30,13 +30,15 @@
 							<td th:text="${medico.especialidad.nombre}">Otto</td>
 							<td th:text="${medico.direccion}">@mdo</td>
 							<td th:text="${medico.telefono}">@mdo</td>
-							<td>@mdo</td>
+							<td><a th:href="@{'/medico/edit/' + ${medico.id}}" class="btn btn-info"><i class="fas fa-edit"></i></a> <!--para editar los medicos pasamos el link en el href --> 
+							<a th:href="@{'/medico/del/' + ${medico.id}}"class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
 						</tr>						
 					</tbody>
 				</table>
 
 			</div>
-			<div class="card-footer text-muted">botones</div>
+			<div class="card-footer text-muted">
+			<a th:href="@{/medico/nuevo}" class="btn btn-primary btn-lg">Nuevo Medico</a></div>
 		</div>
 
 	</div>
